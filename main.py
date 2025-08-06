@@ -153,3 +153,11 @@ def read_user_posts(current_user: User = Depends(get_current_user), db: Session 
 @app.get("/")
 def read_root():
     return {"message": "Welcome to FastAPI Demo", "docs": "/docs"}
+
+
+@app.get("/{anything:path}")
+def catch_all(anything: str):
+    """
+    Generic catch-all route that echoes the path segment.
+    """
+    return anything
