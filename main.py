@@ -2,6 +2,7 @@ import random
 from datetime import timedelta
 
 from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi.responses import PlainTextResponse
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
@@ -155,6 +156,6 @@ def read_root():
     return {"message": "Welcome to FastAPI Demo", "docs": "/docs"}
 
 
-@app.get("/loaderio-1169617544508734aa5dc4919f421add/")
+@app.get("/loaderio-1169617544508734aa5dc4919f421add/", response_class=PlainTextResponse)
 def loaderio():
     return "loaderio-1169617544508734aa5dc4919f421add"
