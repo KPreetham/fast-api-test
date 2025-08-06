@@ -155,14 +155,6 @@ def read_root():
     return {"message": "Welcome to FastAPI Demo", "docs": "/docs"}
 
 
-@app.get("/{anything:path}")
-def catch_all(anything: str):
-    """
-    Generic catch-all route that echoes the path segment.
-    """
-    return anything
-
-
 @app.get("/loaderio-1169617544508734aa5dc4919f421add/")
 def loaderio():
     return "loaderio-1169617544508734aa5dc4919f421add"
