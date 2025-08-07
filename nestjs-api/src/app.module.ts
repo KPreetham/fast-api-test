@@ -23,7 +23,7 @@ import { UsersModule } from './users/users.module';
         url: configService.get<string>('database.url'),
         entities: [User, Post],
         synchronize: true, // Be careful with this in production
-        logging: configService.get<boolean>('server.debug'),
+        logging: false, // Disable SQL query logging
         ssl: configService.get<boolean>('database.ssl')
           ? {
               rejectUnauthorized: false, // Set to true in production with proper SSL certificates

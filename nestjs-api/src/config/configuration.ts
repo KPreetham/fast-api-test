@@ -4,6 +4,7 @@ export default () => ({
       process.env.DATABASE_URL ||
       'postgresql://username:password@localhost:5432/database',
     ssl: process.env.DATABASE_SSL === 'true',
+    logging: process.env.DATABASE_LOGGING === 'true',
   },
   jwt: {
     secret: process.env.JWT_SECRET_KEY || 'your-secret-key',
