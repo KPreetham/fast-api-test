@@ -39,6 +39,12 @@ class Settings(BaseSettings):
         description="Debug mode"
     )
 
+    # Database logging configuration
+    database_logging: bool = Field(
+        default=False,
+        description="Enable database query logging"
+    )
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

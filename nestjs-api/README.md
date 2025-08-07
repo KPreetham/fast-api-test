@@ -125,6 +125,7 @@ npm install
 # Database configuration
 DATABASE_URL=postgresql://username:password@localhost:5432/database
 DATABASE_SSL=true
+DATABASE_LOGGING=false
 
 # JWT configuration
 JWT_SECRET_KEY=your-secret-key-here
@@ -169,6 +170,10 @@ The application uses the same database schema as the FastAPI project:
 ## SSL Configuration
 
 For cloud databases (like AWS RDS, Google Cloud SQL, etc.), SSL is typically required. Set `DATABASE_SSL=true` in your `.env` file. For local development, you can set it to `false` or omit it.
+
+## Database Logging
+
+To disable SQL query logging (recommended for production), set `DATABASE_LOGGING=false`. Set to `true` only for debugging purposes.
 
 ## Port Configuration
 
