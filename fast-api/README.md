@@ -65,6 +65,9 @@ pip install -r requirements.txt
    HOST=0.0.0.0
    PORT=8000
    DEBUG=true
+
+   # Database Logging (optional, set to true only for debugging)
+   DATABASE_LOGGING=false
    ```
 
 4. Create the PostgreSQL database:
@@ -200,6 +203,7 @@ The application uses environment variables for configuration. Create a `.env` fi
 - `PORT` - Server port (default: 8000)
 - `DEBUG` - Debug mode (default: true)
 - `LOG_LEVEL` - Logging level (default: info)
+- `DATABASE_LOGGING` - Enable SQL query logging (default: false)
 
 ### Security Notes
 
@@ -207,6 +211,10 @@ The application uses environment variables for configuration. Create a `.env` fi
 - Use strong, unique JWT secret keys in production
 - Generate secure database passwords
 - Use the `generate_secret.py` script to create secure credentials
+
+### Database Logging
+
+To disable SQL query logging (recommended for production), set `DATABASE_LOGGING=false`. Set to `true` only for debugging purposes. When enabled, all SQL queries will be printed to the console.
 
 ## Security Features
 
